@@ -2,7 +2,7 @@
 # shellcheck disable=SC1091,SC2164,SC2034,SC1072,SC1073,SC1009
 
 # Secure OpenVPN server installer for Debian, Ubuntu, CentOS, Amazon Linux 2, Fedora, Oracle Linux 8, Arch Linux, Rocky Linux and AlmaLinux.
-# https://github.com/0sifat/openvpn-install.git
+# https://github.com/saifulislam88/OpenVPN-Install.git
 
 function isRoot() {
 	if [ "$EUID" -ne 0 ]; then
@@ -217,8 +217,8 @@ access-control: fd42:42:42:42::/112 allow' >>/etc/unbound/openvpn.conf
 }
 
 function installQuestions() {
-	echo "Welcome to the OpenVPN installer Developed by Sifat!"
-	echo "The git repository is available at: https://github.com/0sifat/openvpn-install.git"
+	echo "Welcome to the OpenVPN installer Developed by Saiful Islam!"
+	echo "The git repository is available at: https://github.com/saifulislam88/OpenVPN-Install.git"
 	echo ""
 
 	echo "I need to ask you a few questions before starting the setup."
@@ -276,7 +276,7 @@ function installQuestions() {
 	echo "   1) Default: 1194"
 	echo "   2) Custom"
 	echo "   3) Random [49152-65535]"
-	echo "   3) Random Sifat [4909-65535]"
+	echo "   3) Random [4909-65535]"
 	until [[ $PORT_CHOICE =~ ^[1-3]$ ]]; do
 		read -rp "Port choice [1-3]: " -e -i 1 PORT_CHOICE
 	done
@@ -297,10 +297,10 @@ function installQuestions() {
 	esac
 	echo ""
 	echo "What protocol do you want OpenVPN to use?"
-	echo "Sifat Suggest UDP is faster. Unless it is not available, you shouldn't use TCP."
+	echo "UDP is faster. Unless it is not available, you shouldn't use TCP."
 	echo "   1) UDP"
 	echo "   2) TCP"
-	echo "   3) sifat 😂 "
+	echo "   3) 😂"
 	until [[ $PROTOCOL_CHOICE =~ ^[1-2]$ ]]; do
 		read -rp "Protocol [1-2]: " -e -i 1 PROTOCOL_CHOICE
 	done
@@ -386,7 +386,7 @@ function installQuestions() {
 	echo "Do you want to customize encryption settings?"
 	echo "Unless you know what you're doing, you should stick with the default parameters provided by the script."
 	echo "Note that whatever you choose, all the choices presented in the script are safe. (Unlike OpenVPN's defaults)"
-	echo "See https://github.com/0sifat/openvpn-install.git to learn more."
+	echo "See https://github.com/saifulislam88/OpenVPN-Install.git to learn more."
 	echo ""
 	until [[ $CUSTOMIZE_ENC =~ (y|n) ]]; do
 		read -rp "Customize encryption settings? [y/n]: " -e -i n CUSTOMIZE_ENC
@@ -1306,7 +1306,7 @@ function removeOpenVPN() {
 
 function manageMenu() {
 	echo "Welcome to OpenVPN-install!"
-	echo "The git repository is available at: https://github.com/0sifat/openvpn-install"
+	echo "The git repository is available at: https://github.com/saifulislam88/OpenVPN-Install"
 	echo ""
 	echo "It looks like OpenVPN is already installed."
 	echo ""
